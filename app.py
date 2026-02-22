@@ -2,7 +2,6 @@ from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
 import pandas as pd
 
-app = FastAPI(title="Plumbconnect Matching API", version="1.0")
 app = FastAPI(title="Thrumpfix Matching API", version="1.0")
 
 # -------------------------
