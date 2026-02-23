@@ -5,17 +5,17 @@ import pandas as pd
 app = FastAPI(title="Thrumpfix Matching API", version="1.0")
 
 # -------------------------
-# 1) CONFIG: update these to match your Excel column headers
+# 1) CONFIG: Excel column headers
 # -------------------------
 PLUMBER_FILE = "data/plumbers.csv"
 
-COL_PLUMBER_ID = "Plumber ID"   # change if yours differs
+COL_PLUMBER_ID = "Plumber ID"   
 COL_LGA        = "LGA"
 COL_LCDA       = "LCDA"
 COL_REGION     = "Region"
 
 # -------------------------
-#2) Load dataset once at startup
+#2) Loading dataset once at startup
 # -------------------------
 try:
     plumbers_df = pd.read_csv(PLUMBER_FILE)
@@ -61,7 +61,7 @@ def match(req: MatchRequest):
 
     df = plumbers_df.copy()
 
-    # Your scoring logic: LGA > LCDA > Region
+    # Scoring logic: LGA > LCDA > Region
     def score_row(row):
         if row["_lga_norm"] == lga_n:
             return 1.0
