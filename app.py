@@ -80,7 +80,7 @@ def match(req: MatchRequest):
     recommended = []
     for _, r in result.iterrows():
         s = float(r["score"])
-        reason = "Same LGA" if s == 1.0 else ("Same LCDA" if s == 0.9 else "Same Region")
+        reason = "LGA" if s == 1.0 else ("LCDA" if s == 0.9 else "Region")
         recommended.append({
             "plumberId": int(r[COL_PLUMBER_ID]),
             "score": s,
