@@ -29,7 +29,7 @@ This project highlights backend engineering principles including modular structu
 
 Python
 
-FastAPI (or Flask — update to match your implementation)
+FastAPI
 
 Uvicorn / Gunicorn
 
